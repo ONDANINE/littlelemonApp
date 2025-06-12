@@ -11,6 +11,12 @@ import Offer from "./components/Offer";
 function App() {
   return (
     <>
+      <Header />
+      <Hero />
+      <Menu />
+      <Offer />
+      <Feedback />
+      <Footer />
       <header>
         <nav>
           <ul>
