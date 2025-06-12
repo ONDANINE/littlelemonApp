@@ -1,11 +1,11 @@
 import './App.css';
-import Feedback from "./components/Feedback.js";
-import Footer from "./components/Footer.js";
-import Header from "./components/Header.js";
-import Hero from "./components/Hero.js";
-import Layout from "./components/Layout.js";
-import Menu from "./components/Menu.js";
-import Offer from "./components/Offer.js";
+import Feedback from "./components/Feedback";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Layout from "./components/Layout";
+import Menu from "./components/Menu";
+import Offer from "./components/Offer";
 
 
 function App() {
