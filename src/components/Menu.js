@@ -3,9 +3,9 @@ import styles from "./Menu.module.css";
 
 export default function Menu() {
     return (
-        <section className="Menu">
+        <section className={styles.menuLayout}>
           <button>Our Menu</button>
-          <div className="Popular-Menus">
+          <div className={styles.popularMenuCard}>>
             <h2>Popular menu</h2>
             <p>Description</p>
             <article>List of popular dishes</article>

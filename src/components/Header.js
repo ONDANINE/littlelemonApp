@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export default function Header() {
     return (
-    <header>
+    <header className={styles.headerLayout}>
         <nav>
             <ul>
                 <li>About</li>

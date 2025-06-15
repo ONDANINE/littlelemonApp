@@ -3,9 +3,9 @@ import styles from "./Offer.module.css";
 
 export default function Offer() {
     return (
-        <section className="Offer">
+        <section className={styles.offerLayout}>
           <button>Special Offers</button>
-          <div className="Exclusive-members">
+          <div className={styles.exclusiveMembers}>
             <h2>Exclusive to members</h2>
             <p>Description</p>
             <article>List of offerings</article>

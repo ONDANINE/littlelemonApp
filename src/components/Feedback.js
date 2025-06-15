@@ -4,7 +4,7 @@ import styles from "./Feedback.module.css";
 
 export default function Feedback() {
     return (
-        <section className="Feedback">
+        <section className={styles.feedbackLayout}>
           <h2>Feed back</h2>
           <h3>Opinions</h3>
           <p>We value your feedback!</p>
