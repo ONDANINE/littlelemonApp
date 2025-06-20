@@ -1,18 +1,18 @@
 .headerLayout{
+    width:100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
     background-color: #f8f9fa;
     border-bottom: 8px solid #000000;
     background: #FFF;
+    height: 122px;
+    margin:0px;
 }
 .leftNavbar{
     display: flex;
-    margin-left: 80px;
-    margin-right: auto;
+    margin-left:80px;
     width: 418px;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -24,7 +24,13 @@
 .rightNavbar{
     display: flex;
     margin-right: 80px;
-    margin-left: auto;
     justify-content: space-between;
+    align-items: center;
+    width: 240px;
+}
+
+.headerLayout > img{
+    height: auto;
+    max-width: 221px;
     align-items: center;
 }
