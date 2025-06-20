@@ -4,5 +4,12 @@
     justify-content: space-between;
     padding: 10px 20px;
     background-color: #f8f9fa;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 8px solid #000000;
+    background: #FFF;
+}
+.navbar{
+    display: flex;
+    margin-left: 80px;
+    gap: auto;
+    margin-right: auto;
 }
