@@ -1,6 +1,7 @@
 .headerLayout{
     width:100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-content: space-between;
     background-color: #f8f9fa;
@@ -11,9 +12,12 @@
 }
 .leftNavbar{
     display: flex;
-    margin-left:80px;
     width: 418px;
     align-items: center;
+    height:100%;
+    justify-content: space-between;
+    justify-self: flex-start;
+    padding-left: 80px
 }
 
 .leftNavbar > .linkNavBTN{
@@ -23,14 +27,17 @@
 
 .rightNavbar{
     display: flex;
-    margin-right: 80px;
-    justify-content: space-between;
     align-items: center;
     width: 240px;
+    height:100%;
+    justify-self: flex-end;
+    padding-right: 80px;
 }
 
 .headerLayout > img{
     height: auto;
     max-width: 221px;
     align-items: center;
+    display: block;
+    justify-self: center;
 }
