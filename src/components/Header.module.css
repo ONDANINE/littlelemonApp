@@ -7,9 +7,24 @@
     border-bottom: 8px solid #000000;
     background: #FFF;
 }
-.navbar{
+.leftNavbar{
     display: flex;
     margin-left: 80px;
-    gap: auto;
     margin-right: auto;
+    width: 418px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftNavbar > .linkNavBTN{
+    text-decoration: none;
+    color: black;
+}
+
+.rightNavbar{
+    display: flex;
+    margin-right: 80px;
+    margin-left: auto;
+    justify-content: space-between;
+    align-items: center;
 }
