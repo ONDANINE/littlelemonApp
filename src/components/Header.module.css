@@ -1,9 +1,8 @@
 .headerLayout{
     width:100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3,1fr);
     align-items: center;
-    justify-content: space-between;
     background-color: #f8f9fa;
     border-bottom: 8px solid #000000;
     background: #FFF;
@@ -15,14 +14,24 @@
     width: 418px;
     align-items: center;
     height:100%;
-    justify-content: space-between;
     justify-self: flex-start;
-    padding-left: 80px
+    padding-left: 80px;
+    gap:10px;
 }
 
-.leftNavbar > .linkNavBTN{
+.linkNavBTN{
+    font-family: karla, sans-serif;
+    font-size: 24px;
     text-decoration: none;
-    color: black;
+    color: #000;
+    text-align: center;
+    font-family: Karla;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 100%; /* 24px */
+    letter-spacing: 0.24px;
+    padding: 10px 24px 10px 0px;
 }
 
 .rightNavbar{
@@ -31,7 +40,9 @@
     width: 240px;
     height:100%;
     justify-self: flex-end;
+    justify-content: flex-end;
     padding-right: 80px;
+    gap:30px;
 }
 
 .headerLayout > img{
@@ -41,3 +52,35 @@
     display: block;
     justify-self: center;
 }
+
+.orderBtn{
+    padding: 10px 24px;
+    height:44px;
+    border:none;
+    border-radius: 16px 16px 0px 0px;
+    background-color: #F4CE14;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 2px 0px 0px #000;
+    color: var(--Color_Button_Text, #333);
+    text-align: center;
+    /* Button Main */
+    font-family: Karla;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.accountBtn{
+    background-color: #FFF;
+    border: none;
+    height: 44px;
+    width: 44px;
+    align-items: center;
+    justify-content: center;
+}
+
+.accountIcon{
+    width: 44px;
+    height: 44px;
+}
+

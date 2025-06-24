@@ -3,6 +3,10 @@ import styles from "./Header.module.css";
 import littlelemonLogo from "../images/logolittlelemon.png";
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
+import { VscAccount } from "react-icons/vsc";
+import { MdSupervisorAccount } from "react-icons/md";
+
+
 
 export default function Header() {
     return (
@@ -29,8 +33,10 @@ export default function Header() {
         </nav>
         <img src={littlelemonLogo} alt="Restaurant Logo" />
         <nav className={styles.rightNavbar}>
-            <button>Order Online</button>
-            <button>Login</button>
+            <button className={styles.orderBtn}>Order Online</button>
+            <button className={styles.accountBtn}>
+                <MdSupervisorAccount className={styles.accountIcon} />
+            </button>
         </nav>
     </header>
     )

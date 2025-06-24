@@ -1,10 +1,32 @@
 .heroLayout{
     margin:0px;
     display: flex;
-    width:100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 813px;
+    background-image: url("../images/restauranfood.jpg");
+    background-size: 100%;
+    background-position: center;
+}
+.heroLayout > div{
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+}
+
+.heroLayout > button{
+    justify-self: flex-end;
+    margin-bottom: 56px;
+}
+
+.heroLayout > div > p{
+    font-family: 'Karla', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333333;
+    text-align: center;
+    width: 280px;;
 }

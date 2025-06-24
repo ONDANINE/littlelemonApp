@@ -2,18 +2,49 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 1057px;
+    background-color: #F4CE14;
 }
 
-.popularMenuCard{
+.menuLayout >.popularMenuLayout{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
-    padding: 20px;
+    height: 947px;
+    gap:56px;
     background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-top-left-radius:64px;
+    border-top-right-radius:64px;
+}
+
+.menuLayout > button{
+    background-color: #F4CE14;
+    border: none;
+    height:55px;
+}
+
+.popularMenuLayout > article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width:461px;
+}
+
+.popularMenuCardGrid{
+    display: grid;
+    width:1064px;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows: repeat(3, 169px);
+    border: #F4CE14 solid 1px;
+}
+
+.popularMenuCardGrid > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #96ceb4;
 }
