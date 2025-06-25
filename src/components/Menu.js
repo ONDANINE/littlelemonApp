@@ -6,10 +6,10 @@ export default function Menu() {
         <main className={styles.menuLayout}>
           <button>Our Menu</button>
           <div className={styles.popularMenuLayout}>
-            <article>
+            <div className = {styles.menuText}>
               <h2>Popular menu</h2>
               <p>Savor our most-loved dishes, crafted with fresh ingredients and bold flavors. Perfect for dine-in, takeaway, or delivery — always satisfying and always popular.</p>
-            </article>
+            </div>
             <div className={styles.popularMenuCardGrid}>
                 <div>1</div>
                 <div>2</div>

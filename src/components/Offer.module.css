@@ -2,14 +2,46 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  justify-content: flex-start;
+  width: 100%;
+  height: 934px;
+  margin-top: 56px;;
+  background-color: #F4CE14;
 }
+
+.offerLayout > button{
+  background-color: #F4CE14;
+  border: none;
+  height:110px;
+  color: #000;
+  text-align: center;
+  font-family: Karla;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; /* 66.667% */
+  letter-spacing: 2.4px;
+}
+
+.exclusiveMembers{
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 824px;
+    background-color: #ffffff;
+    border-top-left-radius:64px;
+    border-top-right-radius:64px;
+    border-radius: 64px 64px 0px 0px;
+    box-shadow: -4px -8px 0px 0px #000, 4px -8px 0px 0px #000, 0px -8px 0px 0px #000;
+}
+
 .exclusiveMembers{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+
 }
