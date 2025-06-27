@@ -7,7 +7,7 @@
 }
 
 .menuLayout > button{
-    background-color: #F4CE14;
+    background-color: var(--Brand-Color-2);
     border: none;
     height:110px;
     color: #000;
