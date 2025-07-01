@@ -94,7 +94,7 @@
 .popularMenuCardGrid{
     display: grid;
     width:1064px;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(2, 1fr);
     grid-template-rows: repeat(3, 169px);
     border: 3px solid #000;
     margin-left:189px;
@@ -115,11 +115,13 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+    object-position: center;
 
 }
 .menuCardImageContainer{
     width: 105px;
     height: 105px;
+
     border: #333 solid 3px; /* Border for the image container */
     overflow: hidden; /* Hide overflow to maintain square shape */
 }
