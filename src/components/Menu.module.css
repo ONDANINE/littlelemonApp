@@ -116,42 +116,54 @@
 .menuCardImage {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
 
 }
 .menuCardImageContainer{
     width: 105px;
-    height: 105px;
-
-    border: #333 solid 3px; /* Border for the image container */
-    overflow: hidden; /* Hide overflow to maintain square shape */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
 }
 
 .menuCardText{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Center text vertically within the card */
+    justify-content: flex-start;
     padding-left: 16px; /* Padding to separate text from image */
+    width: 347px;
+    margin-top: 0px;
+    padding-top:0px;
+    padding-bottom: 0px;
 }
 
 .menuCardNamePrice{
     display: flex;
+    height:28px;
     justify-content: space-between;
     align-items: center;
-    color: #000;
-    font-family: "Karla";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 100%;
+    margin:0px;
+}
+.menuCardNamePrice h3{
+color: #000;
+font-family: "Karla";
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 100%;
 }
 
 
+
 .menuCardDescription {
+    font-family: "Karla";
     color: #000;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 100%;
+    line-height: 120%;
 }
