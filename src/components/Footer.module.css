@@ -1,7 +1,76 @@
 .footerLayout{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 16px;
+    grid-template-rows: auto 135px;
+    padding:0 80px;
+    width: 100%;
+    height: 542px;
+    background-color: var(--Brand-Color-1);
+    border-top-left-radius:64px;
+    border-top-right-radius:64px;
+    border-radius: 64px 64px 0px 0px;
+    box-shadow: -4px -8px 0px 0px #000, 4px -8px 0px 0px #000, 0px -8px 0px 0px #000;
+    box-sizing: border-box;
+}
+h4, p{
+    margin-top:0px;
+    margin-bottom: 0px;;
+}
+
+li, a{
+    list-style: none;
+    text-decoration: none;
+}
+h4{
+    color: var(--Brand-Color-2);
+    font-family: "Markazi Text";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+}
+
+.linkArea{
+    grid-column: 1/2;
+    background-color: aqua;
+}
+
+.openContactArea{
+    grid-column: 2/4;
+    background-color: lightcoral;
+}
+.opening > .detail{
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+}
+ .time p{
+    text-align: right;
+ }
+
+
+.addressSocialArea{
+    grid-column: 4/5;
+    background-color: lightgreen;
+}
+.socialGroup{
+    display: flex;
+    justify-content: space-between;
+}
+
+.copyrightArea{
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    background-color: sandybrown;
+    display:flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #f8f9fa;
+    border-top: 3px solid #ffffff;
+}
+
+.copyrightArea > ul > li{
+    display: inline;
+    justify-content: space-between;
 }

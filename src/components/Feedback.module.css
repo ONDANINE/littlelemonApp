@@ -1,15 +1,111 @@
 .feedbackLayout{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+    grid-column-gap: 16px;
+    grid-template-rows: 201px 263px auto;
+    padding:0px 80px;
     width: 100%;
-    height: 649px;
-    background-image: url("../images/FeedbackBG.jpg");
+    height: 594px;
     background-size: 100%;
     background-position: center;
     border-top-left-radius:64px;
     border-top-right-radius:64px;
     border-radius: 64px 64px 0px 0px;
     box-shadow: -4px -8px 0px 0px #000, 4px -8px 0px 0px #000, 0px -8px 0px 0px #000;
+    margin-top:10px;
+    box-sizing: border-box;
+    background-image: linear-gradient(rgb(255 255 255 / 0.5), rgb(255 255 255 / 0.5)),url("../images/FeedbackBG.jpg");
+}
+
+.feedbackLayout > h2{
+    grid-column: 1/-1;
+    color:var(--Brand-Color-2);
+    font-family: "Markazi Text";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 0px #000;
+}
+
+.feedbackArea{
+    grid-column: 1 /2;
+    grid-row: 2/3;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;}
+
+.textArea > h3{
+    color: var(--Brand-Color-2);
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 0px #000;
+    font-family: "Markazi Text";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.textArea > p{
+    color: var(--Brand-Color-6);
+    text-align: center;
+    font-family: Karla;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 0px;
+}
+
+.feedbackArea > button{
+    display: flex;
+    width: 239px;
+    height: 57px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #333;
+    text-align: center;
+    font-family: Karla;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    border-radius: 16px 16px 0px 0px;
+    border: 3px solid #333;
+    background-color: #EE9972;
+    cursor: pointer;   margin-top: 16px;
+}
+
+.reviewCards{
+    grid-column: 2 / span 3;
+    grid-row: 2/3;
+    background-color: darksalmon;
+}
+
+
+.buttonsGroup{
+    grid-column: 2 / span 3;
+    grid-row: 3/4;
+    display:flex;
+    justify-content: space-between;
+    align-items: start;
+    padding-top: 16px;
+}
+.BTN{
+    border: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: transparent;
+}
+.leftrightBTN{
+    height: 48px;
+    width: 48px;
+    border: 1px solid var(--Brand-Color-6);
+    background-color:var(--Brand-Color-2);
+    border-radius: 50%;
 }
