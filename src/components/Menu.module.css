@@ -9,11 +9,12 @@
 
 .menuLayout > button{
     background-color: var(--Brand-Color-2);
-    border: none;
+    border:none;
     height:110px;
+    width: 100%;
     color: #000;
     text-align: center;
-    font-family: Karla;
+    font-family: "Karla", sans-serif; ;
     font-size: 48px;
     font-style: normal;
     font-weight: 700;
@@ -34,6 +35,8 @@
     border-top-right-radius:64px;
     border-radius: 64px 64px 0px 0px;
     box-shadow: -4px -8px 0px 0px #000, 4px -8px 0px 0px #000, 0px -8px 0px 0px #000;
+    padding-bottom: 56px;
+    box-sizing: border-box;
 }
 
 .menuText {
@@ -41,20 +44,21 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    justify-content: flex-start;
-    margin:56px;
+    justify-content: space-between;
+    margin-top:55px;
     width:461px;
     height:272px;
 }
 
 .menuText > h2{
     color: #000;
-    font-family: "Markazi Text";
+    font-family: "Markazi Text", sans-serif;
     font-size: 64px;
     font-style: normal;
     font-weight: 500;
-    line-height: 64px;
-    margin:0px
+    line-height: 100%;
+    margin-top:0px;
+    margin-bottom: 0px;
 }
 
 .menuText > p{
@@ -64,9 +68,9 @@
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
-    line-height: auto;
-    padding:16px;
-    margin:0px;
+    line-height: 120%;
+    margin-top:0px;
+    padding-bottom: 56px;
 }
 
 .popularMenuLayout > button{
@@ -88,7 +92,6 @@
     background: #EE9972;
     display: flex;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 2px 0px 0px #000;
-    margin-bottom: 56px;
     margin-top: 56px;
     cursor: pointer;
 }
