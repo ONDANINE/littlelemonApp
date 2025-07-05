@@ -18,9 +18,18 @@ h4, p{
     margin-bottom: 0px;;
 }
 
-li, a{
+ul, li, a, p{
     list-style: none;
     text-decoration: none;
+    color: #FFF;
+    font-family: "Karla";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-left: 0px;
+    margin-left:0px;
+    margin-top: 16px;;
 }
 h4{
     color: var(--Brand-Color-2);
@@ -31,20 +40,20 @@ h4{
     line-height: 100%;
     text-decoration-line: underline;
     text-decoration-style: solid;
+    padding-top:55px;
 }
 
 .linkArea{
     grid-column: 1/2;
-    background-color: aqua;
 }
 
 .openContactArea{
     grid-column: 2/4;
-    background-color: lightcoral;
 }
 .opening > .detail{
     display: flex;
     justify-content: space-between;
+    margin-right:108px;
 }
  .time p{
     text-align: right;
@@ -53,17 +62,18 @@ h4{
 
 .addressSocialArea{
     grid-column: 4/5;
-    background-color: lightgreen;
 }
 .socialGroup{
     display: flex;
     justify-content: space-between;
+    margin-top:16px;
 }
-
+.addressSocialArea > .socialNetwork{
+    padding-top:115px;
+}
 .copyrightArea{
     grid-column: 1/-1;
     grid-row: 2/3;
-    background-color: sandybrown;
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -73,4 +83,25 @@ h4{
 .copyrightArea > ul > li{
     display: inline;
     justify-content: space-between;
+    width:524px;
+}
+
+.copyrightArea > ul > li > a{
+    font-weight: 300;
+    padding-top: 0px;
+    margin-top: 0px;
+    padding-right: 64px;;
+
+}
+
+.copyrightArea > p{
+    font-weight:300;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.iconStyle{
+    color:white;
+    width:40px;
+    height:60px;
 }

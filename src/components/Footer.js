@@ -46,11 +46,11 @@ export default function Footer() {
           <div className = {styles.addressSocialArea}>
             <h4>Address</h4>
             <p>1849 W Elm Street Chicago, IL 60622</p>
-            <h4>Social Network</h4>
+            <h4 className = {styles.socialNetwork}>Social Network</h4>
             <div className = {styles.socialGroup}>
-              <FiInstagram />
-              <FiFacebook />
-              <FiYoutube />
+              <FiInstagram className = {styles.iconStyle} />
+              <FiFacebook className = {styles.iconStyle} />
+              <FiYoutube className = {styles.iconStyle}/>
             </div>
           </div>
           <div className = {styles.copyrightArea}>
