@@ -5,7 +5,7 @@ import { IconName } from "react-icons/go";
 import { GoChevronLeft } from "react-icons/go";
 import { GoChevronRight } from "react-icons/go";
 import { FaStar } from "react-icons/fa";
-import useEmblaCarousel from 'embla-carousel-react'
+import EmblaCarousel from 'embla-carousel'
 import Autoplay from 'embla-carousel-autoplay'
 
 
@@ -33,11 +33,10 @@ export default function Feedback() {
                     </div>
                   </div>
                   <div className = {styles.starContainer}>
-                    <FaStar className = {styles.starIcon} />
-                    <FaStar className = {styles.starIcon} />
-                    <FaStar className = {styles.starIcon} />
-                    <FaStar className = {styles.starIcon} />
-                    <FaStar className = {styles.starIcon} />
+                    {/* Create an array with a length equal to feedback.star */}
+                    {Array.from({ length: feedback.star }).map((_, index) => (
+                      <FaStar key={index} className={styles.starIcon} />
+                    ))}
                   </div>
                   <div className = {styles.feedbackText}>
                     <p className = {styles.quoteText}>" {feedback.quote} "</p>
