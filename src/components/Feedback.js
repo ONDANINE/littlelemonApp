@@ -7,6 +7,9 @@ import { GoChevronRight } from "react-icons/go";
 import { FaStar } from "react-icons/fa";
 import EmblaCarousel from 'embla-carousel'
 import Autoplay from 'embla-carousel-autoplay'
+import useEmblaCarousel from 'embla-carousel-react'
+
+
 
 
 export default function Feedback() {

@@ -1,6 +1,6 @@
 import './App.css';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Feedback from "./components/Feedback";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -25,3 +25,4 @@ function App() {
 }
 
 export default App;
+
