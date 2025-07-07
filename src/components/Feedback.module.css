@@ -90,6 +90,7 @@
 .feedbackCard{
     display: flex;
     width: 319px;
+    height:85%;
     min-width: 240px;
     padding: 24px;
     flex-direction: column;
@@ -198,4 +199,41 @@
     border: 1px solid var(--Brand-Color-6);
     background-color:var(--Brand-Color-2);
     border-radius: 50%;
+}
+
+.embla {
+grid-column: 2 / span 3;
+grid-row: 2/3;
+/*overflow: hidden;
+display: flex;
+/*position: relative; /* Needed for positioning navigation buttons if they are absolute */
+/*max-width: 100%; /* Or a specific width for your carousel */
+/*margin: 0 auto; /* Center the carousel */
+/*overflow: hidden; /* Hide overflowing slides */
+margin-bottom: 0px;
+}
+
+.emblaViewport {
+    height:100%;
+  overflow: hidden; /* Important for containing the slides */
+}
+
+.emblaContainer {
+  display: flex; /* Flexbox for horizontal arrangement of slides */
+  user-select: none; /* Prevents text selection on drag */
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+/* Counteracts default Embla slide margin for consistent spacing */
+  /* If you are using 'gap' on this container directly, adjust margin-left accordingly */
+}
+
+.emblaSlide {
+  /*min-width: 100%; /* Default: one slide takes full width of viewport */
+  /*padding-left: 10px; /* Space between slides (left padding) */
+  box-sizing: border-box; /* Include padding in slide's width */
+  position: relative; /* If you have absolute content inside slides */
+  flex: 0 0 auto; /* Ensure slides don't shrink or grow unexpectedly */
+  padding:0px;
+  margin:0px;
+  min-width: 240px;
 }
