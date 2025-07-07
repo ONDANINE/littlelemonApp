@@ -8,19 +8,17 @@ import Hero from "./components/Hero";
 import Layout from "./components/Layout";
 import Menu from "./components/Menu";
 import Offer from "./components/Offer";
-
+import Home from "./components/Home";
 
 function App() {
   return (
-    <>
-      <Header />
-      <Hero />
-      <Menu />
-      <Offer />
-      <Feedback />
-      <Footer />
-
-    </>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
   );
 }
 
