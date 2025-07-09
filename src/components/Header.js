@@ -31,7 +31,12 @@ export default function Header() {
               Reservations
             </Link>
         </nav>
-        <img src={littlelemonLogo} alt="Restaurant Logo" />
+        <Link
+            to="/"
+            className={styles.logoLink}
+        >
+          <img src={littlelemonLogo} alt="Restaurant Logo" />
+        </Link>
         <nav className={styles.rightNavbar}>
             <button className={styles.orderBtn}>Order Online</button>
             <button className={styles.accountBtn}>

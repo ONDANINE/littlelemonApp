@@ -8,7 +8,11 @@ import Hero from "./components/Hero";
 import Layout from "./components/Layout";
 import Menu from "./components/Menu";
 import Offer from "./components/Offer";
-import Home from "./components/Home";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Menus from "./pages/Menus";
+import Reservations from "./pages/Reservations";
+import Orderonline from "./pages/Orderonline";
 
 function App() {
   return (
@@ -16,6 +20,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="menus" element={<Menus />} />
+            <Route path="reservations" element={<Reservations />} />
+            <Route path="order-online" element={<Orderonline />} />
           </Route>
         </Routes>
       </BrowserRouter>

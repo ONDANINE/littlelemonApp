@@ -46,7 +46,7 @@
     gap:30px;
 }
 
-.headerLayout > img{
+.headerLayout .logoLink img{
     height: auto;
     max-width: 221px;
     align-items: center;
