@@ -13,6 +13,7 @@ import About from "./pages/About";
 import Menus from "./pages/Menus";
 import Reservations from "./pages/Reservations";
 import Orderonline from "./pages/Orderonline";
+import Account from "./pages/Account";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="menus" element={<Menus />} />
             <Route path="reservations" element={<Reservations />} />
             <Route path="order-online" element={<Orderonline />} />
+            <Route path="account" element={<Account />} />
           </Route>
         </Routes>
       </BrowserRouter>

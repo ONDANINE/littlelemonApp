@@ -38,10 +38,18 @@ export default function Header() {
           <img src={littlelemonLogo} alt="Restaurant Logo" />
         </Link>
         <nav className={styles.rightNavbar}>
-            <button className={styles.orderBtn}>Order Online</button>
-            <button className={styles.accountBtn}>
-                <MdSupervisorAccount className={styles.accountIcon} />
-            </button>
+            <Link
+                to="/order-online"
+            >
+              <button className={styles.orderBtn}>Order Online</button>
+            </Link>
+            <Link
+                to="/account"
+            >
+                <button className={styles.accountBtn}>
+                    <MdSupervisorAccount className={styles.accountIcon} />
+                </button>
+            </Link>
         </nav>
     </header>
     )
