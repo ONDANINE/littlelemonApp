@@ -13,12 +13,12 @@ export default function Footer() {
           <div className = {styles.linkArea}>
             <h4>Little Lemon</h4>
             <ul>
-              <li><a href="/Your Account">Your Account</a></li>
+              <li><a href="/account">Your Account</a></li>
               <li><a href="/about">About</a></li>
               <li><a href="/menus">Menus</a></li>
               <li><a href="/reservations">Reservations</a></li>
-              <li><a href="/Order Online">Order Online</a></li>
-              <li><a href="/Review">Review</a></li>
+              <li><a href="/order-online">Order Online</a></li>
+              <li><a href="/reviews">Reviews</a></li>
             </ul>
           </div>
           <div className = {styles.openContactArea}>

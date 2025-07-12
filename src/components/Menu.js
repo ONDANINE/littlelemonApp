@@ -1,11 +1,18 @@
 import React from "react";
 import dishes from '../data/API';
 import styles from "./Menu.module.css";
+import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
 
 export default function Menu() {
     return (
         <main className={styles.menuLayout}>
-          <button>Our Menu</button>
+          <Link
+            to="/menus"
+            className={styles.ourMenuButton}
+          >
+              <button>Our Menu</button>
+          </Link>
           <div className={styles.popularMenuLayout}>
             <div className = {styles.menuText}>
               <h2>Popular menu</h2>
@@ -28,7 +35,11 @@ export default function Menu() {
                   ))
                 }
             </div>
-            <button> Order Dish</button>
+            <Link
+             to="/order-online"
+             className={styles.orderDishButton}>
+              <button> Order Dish</button>
+            </Link>
           </div>
         </main>
     )

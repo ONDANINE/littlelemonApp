@@ -52,7 +52,7 @@ h2{
     text-align: center;
 }
 
-.heroLayout > button{
+.reservationButton button{
     justify-self: flex-end;
     margin-bottom: 56px;
     display: flex;

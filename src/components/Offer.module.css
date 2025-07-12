@@ -8,7 +8,14 @@
   background-color: #F4CE14;
 }
 
-.offerLayout > button{
+.specialOffersLink {
+    margin:0px auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.specialOffersLink  button{
   background-color: #F4CE14;
   border: none;
   height:110px;
@@ -132,7 +139,7 @@
   line-height: 140%; /* 19.6px */
 }
 
-.exclusiveMembers > button{
+.joinMemberLink  button{
     display: flex;
     width: 289px;
     height: 57px;

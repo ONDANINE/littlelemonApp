@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./Hero.module.css";
+import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
 
 export default function Hero() {
     return (
@@ -11,7 +13,12 @@ export default function Hero() {
             </div>
             <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
           </div>
-          <button>Looking for a table?</button>
+          <Link
+            to="/reservations"
+            className={styles.reservationButton}
+          >
+            <button>Looking for a table?</button>
+          </Link>
         </section>
     )
 };

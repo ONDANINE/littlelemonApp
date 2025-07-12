@@ -1,11 +1,16 @@
 import React from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import offers from '../data/APIOffer';
 import styles from "./Offer.module.css";
 
 export default function Offer() {
   return (
     <main className={styles.offerLayout}>
-      <button>Special Offers</button>
+      <Link
+        to="/special-offers"
+        className={styles.specialOffersLink}>
+        <button>Special Offers</button>
+      </Link>
       <div className={styles.exclusiveMembers}>
         <div className={styles.memberText}>
           <h2>Exclusive to members</h2>
@@ -24,7 +29,12 @@ export default function Offer() {
             </div>
           ))}
         </div>
-        <button>Join Members</button>
+        <Link
+          to="/join-member"
+          className={styles.joinMemberLink}
+        >
+          <button>Join Members</button>
+        </Link>
       </div>
     </main>
   )

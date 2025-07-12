@@ -6,8 +6,12 @@
     height: 1057px;
     background-color: #F4CE14;
 }
+.ourMenuButton {
+    margin:0px;
+    width: 100%;
+}
 
-.menuLayout > button{
+.ourMenuButton > button{
     background-color: var(--Brand-Color-2);
     border:none;
     height:110px;
@@ -73,7 +77,7 @@
     padding-bottom: 56px;
 }
 
-.popularMenuLayout > button{
+.orderDishButton > button{
     display: flex;
     width: 289px;
     height: 57px;
