@@ -1,84 +1,105 @@
 /* src/components/BookingForm/BookingForm.module.css */
 
-/* ... (Keep all your existing styles for .reservationsContainer, .formContentWrapper, .progressBar, etc.) ... */
-
-/* --- Mantine Calendar Customization --- */
-.calendarWrapper {
+/* --- General Layout Styles (Kept as is from previous correct versions) --- */
+.reservationsContainer {
     width: 100%;
-    max-width: 400px; /* Adjust to fit your calendar's desired max width */
-    margin-bottom: 30px;
-    /* Mantine Calendar will render inside this, its own styles will apply first */
-    /* You can apply some outer box-shadow/border here if needed for the whole calendar block */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
 }
 
-/* EXAMPLE: How to override Mantine Calendar styles using global CSS for demonstration */
-/* In a real project, consider using Mantine's classNames/styles prop on the Calendar component
-   to apply CSS modules more cleanly, or theme overrides. */
-
-/* If you need to target Mantine's internal classes directly, you might need :global() or
-   just use plain CSS if not using modules for Mantine overrides */
-:global(.mantine-Calendar-month) {
-    border: 1px solid #000; /* Example: Black border around the month grid */
-    border-radius: 8px;
-    box-shadow: 2px 2px 0px 0px #000;
-    overflow: hidden; /* Ensure content respects border-radius */
-    background-color: #495e57; /* Background for calendar days */
+.formContentWrapper {
+    background-color: #fff;
+    border-radius: 32px; /* Large rounded corners */
+    border: 1px solid #000; /* Thin black border */
+    box-shadow: 4px 4px 0px 0px #000; /* Bottom-right shadow */
+    padding: 40px; /* Padding inside the white box */
+    margin: 40px auto; /* Margin from top and auto-center */
+    max-width: 800px; /* Adjust this max-width to control the overall form size */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-:global(.mantine-Calendar-monthCell) {
-    /* Style for individual day cells */
+.bookingFormStep {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form elements horizontally */
+    gap: 20px; /* Space between form sections */
+    padding: 20px; /* Padding for the entire step content */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.stepTitle { /* Style for "DATE / GUEST" text */
     font-family: 'Karla', sans-serif;
     font-size: 1em;
-    color: #fff;
-    border-radius: 4px;
-    transition: background-color 0.2s ease-in-out;
+    font-weight: 500;
+    color: #6a6a6a;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
-:global(.mantine-Calendar-day[data-selected="true"]) {
-    background-color: #F4CE14 !important; /* Selected day background */
-    color: #333 !important; /* Text color for selected day */
-    border-radius: 4px;
+.pageHeading { /* Style for "Select date and no.guest" */
+    font-family: 'Markazi Text', serif;
+    font-size: 3.5em;
+    color: #000;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
-:global(.mantine-Calendar-day:not([data-selected="true"]):hover) {
-    background-color: #EE9972 !important; /* Hover color for unselected days */
+/* --- BookingProgressBar Styles (Kept as is from previous correct versions) --- */
+.progressBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
 }
 
-:global(.mantine-Calendar-day[data-weekend="true"]) {
-    /* Styles for weekend days if different */
-}
-
-:global(.mantine-Calendar-day[data-disabled="true"]) {
-    color: #888 !important; /* Style for disabled days */
-    cursor: not-allowed !important;
-}
-
-:global(.mantine-Calendar-monthHeader) {
-    background-color: #333; /* Dark header */
-    color: #fff;
+.step {
     font-family: 'Karla', sans-serif;
     font-weight: 700;
+    color: #ccc;
     font-size: 1.1em;
-    padding: 10px;
-}
-:global(.mantine-Calendar-monthHeader_monthAndYear) {
-    text-align: center;
-    flex-grow: 1;
-}
-
-:global(.mantine-Calendar-monthHeader_weekday) {
-    background-color: #6a6a6a; /* Gray background for days of week */
-    color: #fff;
-    padding: 8px 0;
-    font-family: 'Karla', sans-serif;
-    font-size: 0.9em;
-    font-weight: 700;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    position: relative;
+    top: 1px;
+    white-space: nowrap; /* Prevent text from wrapping */
+    flex-shrink: 0;
 }
 
-/* Note for the calendar (Mantine Calendar doesn't have this directly) */
-/* You might add this as a separate <p> tag below the Calendar in BookingFormStep1.js */
-.calendarNote {
+.activeStep {
+    color: #333;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+}
+
+.stepSeparator {
+    width: 1px;
+    height: 15px;
+    background-color: #ddd;
+    margin: 0 10px;
+    flex-shrink: 0;
+}
+
+.step:last-child .stepSeparator {
+    display: none;
+}
+
+
+/* REMOVED :global() prefixes and applied styles directly to YOUR CUSTOM CLASS NAMES */
+/* These classes are passed via the 'classNames' prop in BookingFormStep1.js */
+
+
+.calendarNote { /* Note below the calendar */
     font-family: 'Karla', sans-serif;
     font-size: 0.8em;
     color: #555;
@@ -88,26 +109,24 @@
     margin: 0;
 }
 
-
-/* --- No. Guest Input Styles (Keep your existing styles) --- */
-.guestLabel {
+/* --- No. Guest Input Styles (Restored and Styled) --- */
+.guestLabel { /* "No. Guest" label */
     font-family: 'Karla', sans-serif;
     font-size: 1.1em;
     font-weight: 700;
     color: #333;
     margin-bottom: 5px;
-    align-self: flex-start; /* Align label to the left */
-    margin-left: calc(50% - 150px); /* Adjust to align with max-width of input */
+    /* Removed alignment styles here, parent .bookingFormStep handles centering */
 }
 
-.guestInputWrapper {
+.guestInputWrapper { /* Wrapper for the select dropdown */
     position: relative;
     width: 100%;
     max-width: 300px;
     margin-bottom: 30px;
 }
 
-.guestSelect {
+.guestSelect { /* The select dropdown itself */
     padding: 12px 15px;
     border: 1px solid #000;
     border-radius: 8px;
@@ -115,14 +134,15 @@
     font-size: 1em;
     width: 100%;
     box-sizing: border-box;
-    background-color: #EE9972;
+    background-color: #EE9972; /* Orange background */
     color: #333;
-    appearance: none;
+    appearance: none; /* Hide default dropdown arrow */
     -webkit-appearance: none;
     -moz-appearance: none;
     cursor: pointer;
     font-weight: 700;
-    padding-right: 30px;
+    padding-right: 30px; /* Space for custom arrow */
+    box-shadow: 2px 2px 0px 0px #000; /* Shadow for the input */
 }
 
 .guestSelect:focus {
@@ -131,7 +151,7 @@
     box-shadow: 0 0 0 3px rgba(244, 206, 20, 0.2);
 }
 
-.dropdownArrow {
+.dropdownArrow { /* Custom dropdown arrow */
     position: absolute;
     right: 15px;
     top: 50%;
@@ -141,10 +161,11 @@
     font-size: 0.8em;
 }
 
-.checkAvailableBtn {
-    background-color: #F4CE14;
+/* --- Check Available Button Styles (Restored and Styled) --- */
+.checkAvailableBtn { /* Button style */
+    background-color: #F4CE14; /* Yellow background */
     color: #333;
-    border: 1px solid #000;
+    border: 1px solid #000; /* Black border */
     padding: 15px 30px;
     border-radius: 8px;
     font-family: 'Karla', sans-serif;
@@ -152,9 +173,14 @@
     font-size: 1.1em;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
-    box-shadow: 2px 2px 0px 0px #000;
+    box-shadow: 2px 2px 0px 0px #000; /* Button shadow */
 }
 
 .checkAvailableBtn:hover {
     background-color: #EE9972;
+}
+
+.mantineCalendarHeaderControl{
+    width:24px;
+    height:24px;
 }

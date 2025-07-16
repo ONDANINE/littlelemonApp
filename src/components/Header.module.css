@@ -3,9 +3,7 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
     align-items: center;
-    background-color: #f8f9fa;
-    border-bottom: 8px solid #000000;
-    background: #FFF;
+    background-color: #f8f9fa;    background: #FFF;
     height: 122px;
     margin:0px;
 }

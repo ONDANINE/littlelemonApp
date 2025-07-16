@@ -2,13 +2,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
     height: 100vh;
+    background-color: #ffffff;
+    border-top-left-radius:64px;
+    border-top-right-radius:64px;
+    border-radius: 64px 64px 0px 0px;
+    box-shadow: -4px -8px 0px 0px #000, 4px -8px 0px 0px #000, 0px -8px 0px 0px #000;
+    padding-bottom: 56px;
+    box-sizing: border-box;
 }
 
-.formContent{
-    display: grid;
-    max-width: 200px;
-    gap: 20px;
-}
+.formContentWrapper{}

@@ -8,6 +8,8 @@
     background-size: 100%;
     background-position: center;
     padding-top: 32px;
+    border-top: 8px solid #000000;
+
 }
 .heroText{
     display: flex;
