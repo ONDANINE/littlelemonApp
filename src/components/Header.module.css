@@ -53,6 +53,7 @@
 }
 
 .orderBtn{
+    width:166px;
     padding: 10px 24px;
     height:44px;
     border:none;
@@ -68,6 +69,7 @@
     font-weight: 600;
     line-height: normal;
     cursor: pointer;
+    display: inline-block;
 
 }
 
