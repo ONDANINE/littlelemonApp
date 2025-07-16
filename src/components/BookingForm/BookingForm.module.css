@@ -1,0 +1,160 @@
+/* src/components/BookingForm/BookingForm.module.css */
+
+/* ... (Keep all your existing styles for .reservationsContainer, .formContentWrapper, .progressBar, etc.) ... */
+
+/* --- Mantine Calendar Customization --- */
+.calendarWrapper {
+    width: 100%;
+    max-width: 400px; /* Adjust to fit your calendar's desired max width */
+    margin-bottom: 30px;
+    /* Mantine Calendar will render inside this, its own styles will apply first */
+    /* You can apply some outer box-shadow/border here if needed for the whole calendar block */
+}
+
+/* EXAMPLE: How to override Mantine Calendar styles using global CSS for demonstration */
+/* In a real project, consider using Mantine's classNames/styles prop on the Calendar component
+   to apply CSS modules more cleanly, or theme overrides. */
+
+/* If you need to target Mantine's internal classes directly, you might need :global() or
+   just use plain CSS if not using modules for Mantine overrides */
+:global(.mantine-Calendar-month) {
+    border: 1px solid #000; /* Example: Black border around the month grid */
+    border-radius: 8px;
+    box-shadow: 2px 2px 0px 0px #000;
+    overflow: hidden; /* Ensure content respects border-radius */
+    background-color: #495e57; /* Background for calendar days */
+}
+
+:global(.mantine-Calendar-monthCell) {
+    /* Style for individual day cells */
+    font-family: 'Karla', sans-serif;
+    font-size: 1em;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+:global(.mantine-Calendar-day[data-selected="true"]) {
+    background-color: #F4CE14 !important; /* Selected day background */
+    color: #333 !important; /* Text color for selected day */
+    border-radius: 4px;
+}
+
+:global(.mantine-Calendar-day:not([data-selected="true"]):hover) {
+    background-color: #EE9972 !important; /* Hover color for unselected days */
+}
+
+:global(.mantine-Calendar-day[data-weekend="true"]) {
+    /* Styles for weekend days if different */
+}
+
+:global(.mantine-Calendar-day[data-disabled="true"]) {
+    color: #888 !important; /* Style for disabled days */
+    cursor: not-allowed !important;
+}
+
+:global(.mantine-Calendar-monthHeader) {
+    background-color: #333; /* Dark header */
+    color: #fff;
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+    font-size: 1.1em;
+    padding: 10px;
+}
+:global(.mantine-Calendar-monthHeader_monthAndYear) {
+    text-align: center;
+    flex-grow: 1;
+}
+
+:global(.mantine-Calendar-monthHeader_weekday) {
+    background-color: #6a6a6a; /* Gray background for days of week */
+    color: #fff;
+    padding: 8px 0;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.9em;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Note for the calendar (Mantine Calendar doesn't have this directly) */
+/* You might add this as a separate <p> tag below the Calendar in BookingFormStep1.js */
+.calendarNote {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.8em;
+    color: #555;
+    text-align: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+
+/* --- No. Guest Input Styles (Keep your existing styles) --- */
+.guestLabel {
+    font-family: 'Karla', sans-serif;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+    align-self: flex-start; /* Align label to the left */
+    margin-left: calc(50% - 150px); /* Adjust to align with max-width of input */
+}
+
+.guestInputWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 30px;
+}
+
+.guestSelect {
+    padding: 12px 15px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    font-family: 'Karla', sans-serif;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #EE9972;
+    color: #333;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    font-weight: 700;
+    padding-right: 30px;
+}
+
+.guestSelect:focus {
+    outline: none;
+    border-color: #F4CE14;
+    box-shadow: 0 0 0 3px rgba(244, 206, 20, 0.2);
+}
+
+.dropdownArrow {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333;
+    pointer-events: none;
+    font-size: 0.8em;
+}
+
+.checkAvailableBtn {
+    background-color: #F4CE14;
+    color: #333;
+    border: 1px solid #000;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-family: 'Karla', sans-serif;
+    font-weight: 800;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    box-shadow: 2px 2px 0px 0px #000;
+}
+
+.checkAvailableBtn:hover {
+    background-color: #EE9972;
+}

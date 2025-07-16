@@ -20,7 +20,7 @@ import Reviews from "./pages/Reviews";
 
 function App() {
   return (
-      <BrowserRouter>
+      <>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -34,7 +34,7 @@ function App() {
             <Route path="reviews" element={<Reviews />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </>
   );
 }
 
