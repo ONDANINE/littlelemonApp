@@ -93,7 +93,6 @@
     justify-content: flex-start;
     align-items: center;
     border: 6px solid #333;
-    background: #ffffff;
     box-sizing: border-box;
 }
 
@@ -111,9 +110,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    justify-self: center;
     margin:0px;
     padding: 0px;
-    width:100%;
+    width:200%;
 }
 
 /* Styles for the previous/next month arrow buttons */
@@ -127,30 +127,36 @@
     color: #333;
 }
 .month{
-
     width: 100%;
-    height: 100%;
+    height: 115%;
 }
-.levelsGroup{
+.monthCell{
+    background-color: var(--Brand-Color-1);
+    padding:0px;
 }
 
 .monthThead{
-
+    border-top: 1px solid #000000; /* White background for the header */
+    border-bottom: 1px solid #000000
 }
 
 /* Styles for the day-of-the-week labels (S, M, T, W, etc.) */
 .weekday {
-  color: #EDEFEE; /* Light gray from your color palette */
+  color: #000000; /* Light gray from your color palette */
   font-weight: normal;
 }
 
 /* General styles for each day in the calendar */
 .day {
-  color: #000000;
+  color: #ffffff;
   background-color:var(--Brand-Color-1) ;
   border-radius: 0;
-  &[selected] {
+  &[data-selected] {
   background-color: var(--Brand-Color-2); /* Yellow from your color palette */
+  color:#000000;
+  }
+  &[data-outside]{
+    color:#333;
   }
 }
 
@@ -231,9 +237,8 @@
 
 .dropdownArrow { /* Custom dropdown arrow */
     position: absolute;
-    right: 15px;
+    right: 32px;
     top: 50%;
-    transform: translateY(-50%);
     color: #333;
     pointer-events: none;
     font-size: 16px;

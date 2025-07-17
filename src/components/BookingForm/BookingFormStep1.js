@@ -49,12 +49,12 @@ export default function BookingFormStep1({ bookingData, updateBookingData, goToN
                         selected: dayjs(date).isSame(selectedDate, 'day'),
                         onClick: () => handleDateSelect(date),
                     })}
-                    selected
                     classNames={{
                         calendarHeader: styles.calendarHeader,
                         calendarHeaderControl: styles.calendarHeaderControl,
                         calendarHeaderControlIcon: styles.calendarHeaderControlIcon,
                         month: styles.month,
+                        monthCell: styles.monthCell,
                         monthThead:styles.monthThead,
                         levelsGroup:styles.levelsGroup,
                         weekday: styles.weekday,
