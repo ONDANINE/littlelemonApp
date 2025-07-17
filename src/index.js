@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { MantineProvider } from '@mantine/core'; // <--- NEW: Import MantineProvider
-import '@mantine/core/styles.css';
+import '@mantine/core/styles/baseline.css';
+import '@mantine/core/styles/default-css-variables.css';
+import '@mantine/core/styles/global.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
