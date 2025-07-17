@@ -10,7 +10,7 @@ function Reservations() {
     const [currentStep, setCurrentStep] = useState(1); // State to track the current step (1 to 5)
     const [bookingData, setBookingData] = useState({ // State to hold all booking information
         date: null, // Initialized as null or new Date() based on preference
-        guests: 1,
+        guests: 0,
         time: '',
         tableType: '',
         firstName: '',
