@@ -91,7 +91,6 @@
 .activeStep {
     color: #333;
     border-bottom: 2px solid #000;
-
 }
 
 
@@ -338,17 +337,18 @@
 .tableOptionsContainer {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     gap: 15px;
     width: 100%;
-    max-width: 400px;
-    margin: 20px 0;
+    margin-bottom: 64px;
 }
 
 .tableOption {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 150%;
     padding: 10px 0;
     border-bottom: 1px solid #eee;
     font-family: 'Karla', sans-serif;

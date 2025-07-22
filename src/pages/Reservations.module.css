@@ -12,7 +12,7 @@
 }
 
 .formContentWrapper {
-    max-width: 358px; /* Adjust this max-width to control the overall form size */
+    max-width: 440px; /* Adjust this max-width to control the overall form size */
     height:stretch;
     box-sizing: border-box;
     display: flex;
