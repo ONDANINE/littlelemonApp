@@ -70,6 +70,7 @@ function Reservations() {
                     bookingData={bookingData}
                     updateBookingData={updateBookingData}
                     goToNextStep={goToNextStep}
+                    goToPreviousStep={goToPreviousStep}
                 />
             );
       case 3:
@@ -79,6 +80,7 @@ function Reservations() {
                     bookingData={bookingData}
                     updateBookingData={updateBookingData}
                     goToNextStep={goToNextStep}
+                    goToPreviousStep={goToPreviousStep}
                 />
             );
       case 4:
@@ -88,6 +90,7 @@ function Reservations() {
                     bookingData={bookingData}
                     updateBookingData={updateBookingData}
                     goToNextStep={goToNextStep}
+                    goToPreviousStep={goToPreviousStep}
                 />
             );
       case 5:

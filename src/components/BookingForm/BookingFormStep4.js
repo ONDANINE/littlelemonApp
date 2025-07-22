@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
 import styles from './BookingForm.module.css';
+import { MdArrowBackIos } from "react-icons/md";
 
-export default function BookingFormStep4({ bookingData, updateBookingData, goToNextStep }) {
+
+export default function BookingFormStep4({ bookingData, updateBookingData, goToNextStep, goToPreviousStep }) {
     // A single state object to hold all the form data for this step
     const [formData, setFormData] = useState({
         firstName: bookingData.firstName || '',
@@ -58,7 +60,13 @@ export default function BookingFormStep4({ bookingData, updateBookingData, goToN
 
     return (
         <form className={styles.bookingFormStep} onSubmit={handleSubmit} noValidate>
-            <h3 className={styles.pageHeading}>Your information</h3>
+            <div className={styles.header}>
+                            <MdArrowBackIos
+                                className={styles.backButton}
+                                onClick={goToPreviousStep}
+                            />
+                            <h3 className={styles.pageHeading}>Your information</h3>
+                        </div>
             <p className={styles.stepTitle}>{summaryText}</p>
 
             <div className={styles.formField}>
@@ -66,7 +74,7 @@ export default function BookingFormStep4({ bookingData, updateBookingData, goToN
                 <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="e.g. Sarah" required />
                 {errors.firstName && <span className={styles.errorText}>{errors.firstName}</span>}
             </div>
-            
+
             <div className={styles.formField}>
                 <label htmlFor="lastName">LAST NAME</label>
                 <input type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="e.g. Thompson" required />

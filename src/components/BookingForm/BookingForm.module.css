@@ -34,8 +34,8 @@
     display:flex;
     align-items: center;
     width: 100%;
-    justify-content: flex-start;
-    gap:20%;
+    justify-content: center;
+    position: relative;
 }
 .pageHeading { /* Style for "Select date and no.guest" */
     color: #333;
@@ -52,6 +52,12 @@
 .backButton {
     width: 24px; /* Yellow from your color palette */
     justify-self: start;
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+}
+.backButton:hover {
+    color: #EE9972;
 }
 
 /* --- BookingProgressBar Styles (Kept as is from previous correct versions) --- */
@@ -231,6 +237,7 @@
 
 /* SHADOW BELOW */
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 2px 0px 0px #000;
+    cursor: pointer;
 }
 .guestSelect > option{
     color: #1B1B1B;
@@ -278,6 +285,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    cursor: pointer;
 }
 
 .checkAvailableBtn:hover {

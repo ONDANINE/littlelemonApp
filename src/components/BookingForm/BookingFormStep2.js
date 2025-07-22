@@ -14,7 +14,7 @@ const availableTimes = [
     // Add more times here if needed
 ];
 
-export default function BookingFormStep2({ bookingData, updateBookingData, goToNextStep }) {
+export default function BookingFormStep2({ bookingData, updateBookingData, goToNextStep, goToPreviousStep }) {
     // We use local state to track the currently selected time.
     const [selectedTime, setSelectedTime] = useState(bookingData.time);
 
@@ -38,7 +38,10 @@ export default function BookingFormStep2({ bookingData, updateBookingData, goToN
     return (
         <form className={styles.bookingFormStep} onSubmit={handleSubmit}>
             <div className={styles.header}>
-                <MdArrowBackIos className={styles.backButton} />
+                <MdArrowBackIos
+                className={styles.backButton}
+                onClick={goToPreviousStep}
+                />
                 <h3 className={styles.pageHeading}>Select time</h3>
             </div>
             <p className={styles.stepTitle}>{`${formattedDate} FOR ${guestText}`}</p>

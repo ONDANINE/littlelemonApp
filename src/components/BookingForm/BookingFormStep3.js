@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
 import styles from './BookingForm.module.css';
 import { fetchTableAvailability } from '../../utils/fakeAPI'; // Import our new fake API
+import { MdArrowBackIos } from "react-icons/md";
 
 const tableTypes = [
     { id: 'standard', name: 'Standard table' },
@@ -9,7 +10,7 @@ const tableTypes = [
     { id: 'outdoor', name: 'Outdoor table' },
 ];
 
-export default function BookingFormStep3({ bookingData, updateBookingData, goToNextStep }) {
+export default function BookingFormStep3({ bookingData, updateBookingData, goToNextStep, goToPreviousStep }) {
     const [selectedTable, setSelectedTable] = useState(bookingData.tableType);
     const [availability, setAvailability] = useState({
         standard: true,
@@ -40,7 +41,13 @@ export default function BookingFormStep3({ bookingData, updateBookingData, goToN
 
     return (
         <form className={styles.bookingFormStep} onSubmit={handleSubmit}>
-            <h3 className={styles.pageHeading}>Table options</h3>
+            <div className={styles.header}>
+                <MdArrowBackIos
+                    className={styles.backButton}
+                    onClick={goToPreviousStep}
+                />
+                <h3 className={styles.pageHeading}>Table options</h3>
+            </div>
             <p className={styles.stepTitle}>{summaryText}</p>
 
             <div className={styles.tableOptionsContainer}>
