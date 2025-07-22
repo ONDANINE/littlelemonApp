@@ -11,7 +11,7 @@
     width: 100%;
     box-sizing: border-box;
 }
-.bookingFormStep >  h3, p, label{
+.bookingFormStep,  h3, p, label{
     margin:0px;
     padding: 0px;;
 }
@@ -29,7 +29,14 @@
     line-height: normal;
     margin: 0px;;
 }
-
+.header{
+    margin-top: 16px;
+    display:flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+    gap:20%;
+}
 .pageHeading { /* Style for "Select date and no.guest" */
     color: #333;
     text-align: center;
@@ -40,6 +47,11 @@
     font-weight: 700;
     line-height: 32px; /* 100% */
     letter-spacing: 1.6px;
+    align-items: center;}
+
+.backButton {
+    width: 24px; /* Yellow from your color palette */
+    justify-self: start;
 }
 
 /* --- BookingProgressBar Styles (Kept as is from previous correct versions) --- */
@@ -310,6 +322,7 @@
     margin-top: 20px;
     font-family: 'Karla', sans-serif;
     font-weight: 500;
+    color:#000;
 }
 
 /* Add these new styles to STEP 3 */

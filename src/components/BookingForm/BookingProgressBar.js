@@ -14,7 +14,7 @@ export default function BookingProgressBar({ currentStep }) {
       {steps.map(step => (
         <span
           key={step.id}
-          className={`${styles.step} ${currentStep >= step.id ? styles.activeStep : ''}`} // Apply activeStep class
+          className={`${styles.step} ${currentStep === step.id ? styles.activeStep : ''}`} // Apply activeStep class
         >
           {step.name}
           {/* Render separator only if it's not the last step */}

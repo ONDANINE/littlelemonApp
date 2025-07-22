@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import dayjs from 'dayjs';
 import styles from './BookingForm.module.css'; // We'll re-use the same stylesheet
+import { MdArrowBackIos } from "react-icons/md";
+
 
 // This array holds all the available time slots.
 const availableTimes = [
@@ -35,7 +37,10 @@ export default function BookingFormStep2({ bookingData, updateBookingData, goToN
 
     return (
         <form className={styles.bookingFormStep} onSubmit={handleSubmit}>
-            <h3 className={styles.pageHeading}>Select time</h3>
+            <div className={styles.header}>
+                <MdArrowBackIos className={styles.backButton} />
+                <h3 className={styles.pageHeading}>Select time</h3>
+            </div>
             <p className={styles.stepTitle}>{`${formattedDate} FOR ${guestText}`}</p>
 
             {/* A grid to display all the time slots */}
