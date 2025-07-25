@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import BookingFormStep1 from '../components/BookingForm/BookingFormStep1';
 import BookingProgressBar from '../components/BookingForm/BookingProgressBar';
 import styles from "./Reservations.module.css";
@@ -8,21 +7,8 @@ import BookingFormStep2 from '../components/BookingForm/BookingFormStep2';
 import BookingFormStep3 from '../components/BookingForm/BookingFormStep3';
 import BookingFormStep4 from '../components/BookingForm/BookingFormStep4';
 import BookingConfirmation from '../components/BookingForm/BookingConfirmation';
+import { initialBookingData } from '../data/initialBookingData';
 
-// Define the initial state outside the component so we can easily reuse it.
-const initialBookingData = {
-    date: null,
-    guests: 0,
-    time: '',
-    tableType: '',
-    firstName: '',
-    lastName: '',
-    email: '',
-    tel: '',
-    note: '',
-    promotional: false,
-    termsAccepted: false,
-};
 
 function Reservations() {
     const [currentStep, setCurrentStep] = useState(1); // State to track the current step (1 to 5)
