@@ -7,25 +7,15 @@ import styles from './BookingForm.module.css';
 
 export default function BookingFormStep1({ bookingData, updateBookingData, goToNextStep }) {
 
-    const [selectedDate, setSelectedDate] = useState(bookingData.date);
-
-    // This function now handles the click on a day
-    const handleDateSelect = (date) => {
-        setSelectedDate(date); // 1. Update our local state for instant feedback
-        updateBookingData({ date: date }); // 2. Immediately tell the parent component
-    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         goToNextStep();
     };
 
-    const today = dayjs();
-    const minDate = today.toDate();
-    const maxDate = today.add(30, 'days').toDate();
 
-    const formattedDate = selectedDate
-        ? dayjs(selectedDate).format('D MMMM YYYY').toUpperCase()
+    const formattedDate = bookingData.date
+        ? dayjs(bookingData.date).format('D MMMM YYYY').toUpperCase()
         : '';
 
     // The console.log should be just before the return statement.
@@ -35,7 +25,7 @@ export default function BookingFormStep1({ bookingData, updateBookingData, goToN
         <form className={styles.bookingFormStep} onSubmit={handleSubmit} >
             <h3 className={styles.pageHeading}>Select date and no.guest</h3>
 
-            {selectedDate && bookingData.guests > 0 ? (
+            {bookingData && bookingData.guests > 0 ? (
                 <p className={styles.stepTitle}>
                     {`${formattedDate} for ${bookingData.guests} ${bookingData.guests > 1 ? 'guests' : 'guest'}`}
                 </p>
@@ -43,11 +33,11 @@ export default function BookingFormStep1({ bookingData, updateBookingData, goToN
 
             <div className={styles.calendarWrapper}>
                 <Calendar
-                    minDate={minDate}
-                    maxDate={maxDate}
+                    minDate={new Date()}
+                    maxDate={dayjs().add(30, 'days').toDate()}
                     getDayProps={(date) => ({
-                        selected: dayjs(date).isSame(selectedDate, 'day'),
-                        onClick: () => handleDateSelect(date),
+                        selected: dayjs(bookingData.date).isSame(date, 'day'),
+                        onClick: () => updateBookingData({ date: date }), // Simplest possible handler
                     })}
                     classNames={{
                         calendarHeader: styles.calendarHeader,

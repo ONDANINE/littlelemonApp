@@ -5,16 +5,7 @@ import styles from './BookingForm.module.css'; // We'll re-use the same styleshe
 import { MdArrowBackIos } from "react-icons/md";
 
 
-// This array holds all the available time slots.
-const availableTimes = [
-    '17:15', '17:30', '17:45', '18:00',
-    '18:15', '18:30', '18:45', '19:00',
-    '19:15', '19:30', '19:45', '20:00',
-    '20:15', '20:30', '20:45', '21:00',
-    // Add more times here if needed
-];
-
-export default function BookingFormStep2({ bookingData, updateBookingData, goToNextStep, goToPreviousStep }) {
+export default function BookingFormStep2({ bookingData, updateBookingData, goToNextStep, goToPreviousStep, availableTimes }) {
     // We use local state to track the currently selected time.
     const [selectedTime, setSelectedTime] = useState(bookingData.time);
 
@@ -48,16 +39,21 @@ export default function BookingFormStep2({ bookingData, updateBookingData, goToN
 
             {/* A grid to display all the time slots */}
             <div className={styles.timeGrid}>
-                {availableTimes.map((time) => (
-                    <button
-                        key={time}
-                        type="button" // Important: type="button" prevents form submission
-                        className={`${styles.timeSlotButton} ${selectedTime === time ? styles.selectedTimeSlot : ''}`}
-                        onClick={() => handleTimeSelect(time)}
-                    >
-                        {time}
-                    </button>
-                ))}
+                {/* Map over the `availableTimes` array passed down from the parent */}
+                {availableTimes && availableTimes.length > 0 ? (
+                    availableTimes.map((time) => (
+                        <button
+                            key={time}
+                            type="button"
+                            className={`${styles.timeSlotButton} ${selectedTime === time ? styles.selectedTimeSlot : ''}`}
+                            onClick={() => handleTimeSelect(time)}
+                        >
+                            {time}
+                        </button>
+                    ))
+                ) : (
+                    <p>No available times for the selected date.</p>
+                )}
             </div>
 
             {/* This text appears only after a time has been selected */}

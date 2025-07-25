@@ -1,104 +1,76 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom/client';
+// src/pages/Reservations.js
+import React, { useState, useReducer, useEffect } from 'react';
 import BookingFormStep1 from '../components/BookingForm/BookingFormStep1';
-import BookingProgressBar from '../components/BookingForm/BookingProgressBar';
-import styles from "./Reservations.module.css";
 import BookingFormStep2 from '../components/BookingForm/BookingFormStep2';
 import BookingFormStep3 from '../components/BookingForm/BookingFormStep3';
 import BookingFormStep4 from '../components/BookingForm/BookingFormStep4';
 import BookingConfirmation from '../components/BookingForm/BookingConfirmation';
+import BookingProgressBar from '../components/BookingForm/BookingProgressBar';
+import styles from "./Reservations.module.css";
 import { initialBookingData } from '../data/initialBookingData';
+import { fetchAPI } from '../api';
 
+export const updateTimes = (state, action) => {
+    if (action.type === 'UPDATE_TIMES') {
+        return { ...state, times: action.payload };
+    }
+    return state;
+};
 
 function Reservations() {
-    const [currentStep, setCurrentStep] = useState(1); // State to track the current step (1 to 5)
-    const [bookingData, setBookingData] = useState(initialBookingData); // State to hold the booking data across steps
+    const [currentStep, setCurrentStep] = useState(1);
+    const [bookingData, setBookingData] = useState(initialBookingData);
+    const [availableTimes, dispatch] = useReducer(updateTimes, { times: [] });
 
-  // Function to update the booking data from child components
-  const updateBookingData = (newData) => {
-    setBookingData(prevData => ({ ...prevData, ...newData }));
-  };
+    useEffect(() => {
+        const todaysTimes = fetchAPI(new Date());
+        dispatch({ type: 'UPDATE_TIMES', payload: todaysTimes });
+    }, []);
 
-  // Function to move to the next step
-  const goToNextStep = () => {
-    setCurrentStep(prevStep => prevStep + 1);
-  };
+    const updateBookingData = (newData) => {
+        setBookingData(prevData => ({ ...prevData, ...newData }));
 
-  // Function to move to the previous step (for "back" navigation)
-  const goToPreviousStep = () => {
-    setCurrentStep(prevStep => prevStep - 1);
-  };
+        if (newData.date) {
+            // --- THIS IS THE ONLY CHANGE. IT IS A NON-VISUAL FIX. ---
+            // We create a new, standard Date object to ensure the correct data type.
+            const standardDate = new Date(newData.date);
+            const newAvailableTimes = fetchAPI(standardDate); // Pass the safe, standard date to the API
+            dispatch({ type: 'UPDATE_TIMES', payload: newAvailableTimes });
+        }
+    };
 
-  // NEW: A function to reset all state back to the beginning.
+    const goToNextStep = () => setCurrentStep(prev => prev + 1);
+    const goToPreviousStep = () => setCurrentStep(prev => prev - 1);
     const resetForm = () => {
         setCurrentStep(1);
         setBookingData(initialBookingData);
     };
 
+    const renderStep = () => {
+        switch (currentStep) {
+            case 1:
+                return <BookingFormStep1 bookingData={bookingData} updateBookingData={updateBookingData} goToNextStep={goToNextStep} />;
+            case 2:
+                return <BookingFormStep2 bookingData={bookingData} updateBookingData={updateBookingData} goToNextStep={goToNextStep} goToPreviousStep={goToPreviousStep} availableTimes={availableTimes.times} />;
+            case 3:
+                 return <BookingFormStep3 bookingData={bookingData} updateBookingData={updateBookingData} goToNextStep={goToNextStep} goToPreviousStep={goToPreviousStep} />;
+            case 4:
+                return <BookingFormStep4 bookingData={bookingData} updateBookingData={updateBookingData} goToNextStep={goToNextStep} goToPreviousStep={goToPreviousStep} />;
+            case 5:
+                return <BookingConfirmation bookingData={bookingData} resetForm={resetForm} />;
+            default:
+                return <p>Something went wrong!</p>;
+        }
+    };
 
-
-  // This function renders the correct step component based on 'currentStep'
-  const renderStep = () => {
-    switch (currentStep) {
-      case 1:
-        return (
-          <BookingFormStep1
-            bookingData={bookingData}
-            updateBookingData={updateBookingData}
-            goToNextStep={goToNextStep}
-          />
-        );
-      case 2:
-        // When we build Step 2, uncomment this line and remove the placeholder
-        // return <BookingFormStep2 bookingData={bookingData} updateBookingData={updateBookingData} goToNextStep={goToNextStep} goToPreviousStep={goToPreviousStep} />;
-        return (
-                <BookingFormStep2
-                    bookingData={bookingData}
-                    updateBookingData={updateBookingData}
-                    goToNextStep={goToNextStep}
-                    goToPreviousStep={goToPreviousStep}
-                />
-            );
-      case 3:
-        // return <BookingFormStep3 bookingData={bookingData} updateBookingData={updateBookingData} goToNextStep={goToNextStep} goToPreviousStep={goToPreviousStep} />;
-        return (
-                <BookingFormStep3
-                    bookingData={bookingData}
-                    updateBookingData={updateBookingData}
-                    goToNextStep={goToNextStep}
-                    goToPreviousStep={goToPreviousStep}
-                />
-            );
-      case 4:
-        // return <BookingFormStep4 bookingData={bookingData} updateBookingData={updateBookingData} goToNextStep={goToNextStep} goToPreviousStep={goToPreviousStep} />;
-        return (
-                <BookingFormStep4
-                    bookingData={bookingData}
-                    updateBookingData={updateBookingData}
-                    goToNextStep={goToNextStep}
-                    goToPreviousStep={goToPreviousStep}
-                />
-            );
-      case 5:
-        // return <BookingConfirmation bookingData={bookingData} />;
-        return (
-                <BookingConfirmation
-                    bookingData={bookingData}
-                    resetForm={resetForm} // Pass the reset function as a prop
-                />
-            );
-      default:
-        return <p>Something went wrong!</p>; // Fallback in case of invalid step
-    }
-  };
-return (
-    <div className={styles.reservationsContainer}> {/* Main container for the entire booking page */}
-      <BookingProgressBar currentStep={currentStep} /> {/* The progress indicator at the top */}
-      <div className={styles.formContentWrapper}> {/* The white box with rounded corners and shadow */}
-        {renderStep()} {/* Renders the current step's form component */}
-      </div>
-    </div>
-  );
+    return (
+        <div className={styles.reservationsContainer}>
+            <BookingProgressBar currentStep={currentStep} />
+            <div className={styles.formContentWrapper}>
+                {renderStep()}
+            </div>
+        </div>
+    );
 }
 
 export default Reservations;
