@@ -13,11 +13,11 @@ export default function BookingConfirmation({ bookingData, resetForm }) {
     };
 
     // Format the data for display
-    const formattedDate = bookingData.date 
-        ? dayjs(bookingData.date).format('D MMMM YYYY').toUpperCase() 
+    const formattedDate = bookingData.date
+        ? dayjs(bookingData.date).format('D MMMM YYYY').toUpperCase()
         : '';
     const summaryText = `We've reserved a table for ${bookingData.guests} ${bookingData.guests > 1 ? 'guests' : 'guest'} on ${formattedDate} at ${bookingData.time} at our ${bookingData.tableType} table.`;
-
+    console.log(bookingData);
     return (
         <div className={styles.confirmationStep}>
             <h2 className={styles.pageHeading}>Your reservation has been complete</h2>

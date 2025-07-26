@@ -8,7 +8,7 @@ import BookingConfirmation from '../components/BookingForm/BookingConfirmation';
 import BookingProgressBar from '../components/BookingForm/BookingProgressBar';
 import styles from "./Reservations.module.css";
 import { initialBookingData } from '../data/initialBookingData';
-import { fetchAPI } from '../api';
+import { fetchAPI, submitAPI } from '../api';
 
 export const updateTimes = (state, action) => {
     if (action.type === 'UPDATE_TIMES') {
@@ -39,6 +39,23 @@ function Reservations() {
         }
     };
 
+    const submitForm = (finalFormData) => {
+        // First, update the main state with the last pieces of data from Step 4
+        const completeBookingData = { ...bookingData, ...finalFormData };
+        // Now, submit the complete data to the API
+        const success = submitAPI(completeBookingData);
+
+        // If the submission is successful, move to the confirmation page
+        if (success) {
+            // We update the state one last time so the confirmation page has all the data
+            setBookingData(completeBookingData);
+            goToNextStep();
+        } else {
+            // Handle submission failure if needed (e.g., show an error message)
+            console.error("Form submission failed.");
+        }
+    };
+
     const goToNextStep = () => setCurrentStep(prev => prev + 1);
     const goToPreviousStep = () => setCurrentStep(prev => prev - 1);
     const resetForm = () => {
@@ -55,7 +72,7 @@ function Reservations() {
             case 3:
                  return <BookingFormStep3 bookingData={bookingData} updateBookingData={updateBookingData} goToNextStep={goToNextStep} goToPreviousStep={goToPreviousStep} />;
             case 4:
-                return <BookingFormStep4 bookingData={bookingData} updateBookingData={updateBookingData} goToNextStep={goToNextStep} goToPreviousStep={goToPreviousStep} />;
+                return <BookingFormStep4 bookingData={bookingData} submitForm={submitForm}  goToPreviousStep={goToPreviousStep} />;
             case 5:
                 return <BookingConfirmation bookingData={bookingData} resetForm={resetForm} />;
             default:

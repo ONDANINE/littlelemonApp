@@ -4,7 +4,7 @@ import styles from './BookingForm.module.css';
 import { MdArrowBackIos } from "react-icons/md";
 
 
-export default function BookingFormStep4({ bookingData, updateBookingData, goToNextStep, goToPreviousStep }) {
+export default function BookingFormStep4({ bookingData, submitForm, goToPreviousStep }) {
     // A single state object to hold all the form data for this step
     const [formData, setFormData] = useState({
         firstName: bookingData.firstName || '',
@@ -51,8 +51,8 @@ export default function BookingFormStep4({ bookingData, updateBookingData, goToN
     const handleSubmit = (e) => {
         e.preventDefault();
         if (isFormValid) {
-            updateBookingData(formData); // Send the final data to the parent
-            goToNextStep(); // Move to the final confirmation step (Step 5)
+            // It calls the submitForm function from the parent, passing its own local data.
+            submitForm(formData);
         }
     };
 
