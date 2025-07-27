@@ -53,7 +53,14 @@ h4{
 .opening > .detail{
     display: flex;
     justify-content: space-between;
-    margin-right:108px;
+    margin-right:108;
+}
+
+.detail > .day{
+    margin-top: 16px;
+}
+.detail > .time{
+    margin-top: 16px;
 }
  .time p{
     text-align: right;
@@ -62,6 +69,9 @@ h4{
 
 .addressSocialArea{
     grid-column: 4/5;
+}
+.addressSocialArea > h4{
+    margin-bottom: 16px;
 }
 .socialGroup{
     display: flex;
