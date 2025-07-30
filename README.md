@@ -1,3 +1,4 @@
+Little Lemon Restaurant Website 🍋 - Front-End Capstone
 
 ![localhost_3000_](https://github.com/user-attachments/assets/11d31322-f293-4538-877e-33cae34da86b)
 
@@ -59,3 +60,14 @@ The application is structured as a Single-Page Application (SPA) with the follow
 * **Date & Time:** **Day.js** for parsing, validating, and formatting dates.
 * **API Simulation:** A local mock API (`api.js`) to simulate fetching and submitting data to a backend server.
 * **Testing:** **Jest** and **React Testing Library** for writing and running unit tests on the application's core logic and components.
+
+BOOKING PROCESS..
+<img width="2994" height="3090" alt="localhost_3000_ (2)" src="https://github.com/user-attachments/assets/23b979b8-288a-451c-a362-de5e09a587c6" />
+
+<img width="2994" height="2498" alt="localhost_3000_ (3)" src="https://github.com/user-attachments/assets/afd51262-2a50-45be-b37a-4141826f4692" />
+
+<img width="2994" height="2782" alt="localhost_3000_ (4)" src="https://github.com/user-attachments/assets/3ac1b12f-8773-4d86-a5b4-cb8d7b59821d" />
+
+<img width="2994" height="3516" alt="localhost_3000_ (5)" src="https://github.com/user-attachments/assets/c73f776b-7771-4189-b90d-76bb1bb0aa78" />
+
+<img width="2994" height="2722" alt="localhost_3000_ (6)" src="https://github.com/user-attachments/assets/5dcbdacb-539f-45a3-a3bb-705f181ae94c" />
