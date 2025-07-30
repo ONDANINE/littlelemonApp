@@ -61,7 +61,50 @@ The application is structured as a Single-Page Application (SPA) with the follow
 * **API Simulation:** A local mock API (`api.js`) to simulate fetching and submitting data to a backend server.
 * **Testing:** **Jest** and **React Testing Library** for writing and running unit tests on the application's core logic and components.
 
+### Responsive Design
+
+The website is fully responsive and has been optimized for a seamless experience across a range of devices:
+* **📱 Mobile:** 320px and up
+* **📱 Tablet:** 768px and up
+* **💻 Desktop:** 1024px and up
+* **🖥️ Large screens:** 1200px and up
+
+### Design System
+
+The project adheres to a consistent design system to maintain a cohesive brand identity.
+
+* **Brand Colors**
+    * Primary Green: `#495E57`
+    * Secondary Yellow: `#F4CE14`
+    * Background: `#FBFBFB`
+    * Text: `#666666`
+* **Typography**
+    * Uses clean, modern fonts (`Karla` and `Markazi Text`) with a clear visual hierarchy.
+    * Maintains consistent spacing and line heights for readability.
+    * Ensures accessible contrast ratios for all text.
+
+### License
+
+This project is licensed under the MIT License.
+
+### Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+### Developer
+
+Peeradon Warithkorasuth : pdon.wus@gmail.com
+
+
 BOOKING PROCESS..
+
+* **Table Reservation System:**
+    1.  **Step 1: Date & Guest Selection:** Features an interactive calendar for choosing a date.
+    2.  **Step 2: Time Selection:** Displays a grid of available time slots, dynamically loaded from an API based on the selected date.
+    3.  **Step 3: Table Selection:** Provides a list of table options with conditional availability based on the selected time (e.g., outdoor seating is unavailable after 18:00).
+    4.  **Step 4: Information Form:** A comprehensive form for user details with real-time validation.
+    5.  **Step 5: Confirmation:** A final summary page confirming the successful booking.
+* **Navigation:** Includes "back" and "forward" navigation throughout all steps of the booking process.
 <img width="2994" height="3090" alt="localhost_3000_ (2)" src="https://github.com/user-attachments/assets/23b979b8-288a-451c-a362-de5e09a587c6" />
 
 <img width="2994" height="2498" alt="localhost_3000_ (3)" src="https://github.com/user-attachments/assets/afd51262-2a50-45be-b37a-4141826f4692" />
@@ -71,3 +114,9 @@ BOOKING PROCESS..
 <img width="2994" height="3516" alt="localhost_3000_ (5)" src="https://github.com/user-attachments/assets/c73f776b-7771-4189-b90d-76bb1bb0aa78" />
 
 <img width="2994" height="2722" alt="localhost_3000_ (6)" src="https://github.com/user-attachments/assets/5dcbdacb-539f-45a3-a3bb-705f181ae94c" />
+
+
+
+
+
+
