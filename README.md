@@ -61,6 +61,8 @@ The application is structured as a Single-Page Application (SPA) with the follow
 * **API Simulation:** A local mock API (`api.js`) to simulate fetching and submitting data to a backend server.
 * **Testing:** **Jest** and **React Testing Library** for writing and running unit tests on the application's core logic and components.
 
+---
+
 ### Responsive Design
 
 The website is fully responsive and has been optimized for a seamless experience across a range of devices:
@@ -95,6 +97,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 Peeradon Warithkorasuth : pdon.wus@gmail.com
 
+---
 
 BOOKING PROCESS..
 
