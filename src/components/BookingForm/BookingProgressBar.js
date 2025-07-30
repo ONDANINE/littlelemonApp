@@ -10,11 +10,12 @@ export default function BookingProgressBar({ currentStep }) {
   ];
 
   return (
-    <div className={styles.progressBar}>
+    <div className={styles.progressBar} role="navigation" aria-label="Booking Steps">
       {steps.map(step => (
         <span
           key={step.id}
           className={`${styles.step} ${currentStep === step.id ? styles.activeStep : ''}`} // Apply activeStep class
+          aria-current={currentStep === step.id ? 'step' : 'false'}
         >
           {step.name}
           {/* Render separator only if it's not the last step */}

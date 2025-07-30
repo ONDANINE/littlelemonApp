@@ -38,7 +38,7 @@ export default function BookingFormStep2({ bookingData, updateBookingData, goToN
             <p className={styles.stepTitle}>{`${formattedDate} FOR ${guestText}`}</p>
 
             {/* A grid to display all the time slots */}
-            <div className={styles.timeGrid}>
+            <div className={styles.timeGrid} role="group" aria-label="Available Times">
                 {/* Map over the `availableTimes` array passed down from the parent */}
                 {availableTimes && availableTimes.length > 0 ? (
                     availableTimes.map((time) => (
@@ -47,6 +47,7 @@ export default function BookingFormStep2({ bookingData, updateBookingData, goToN
                             type="button"
                             className={`${styles.timeSlotButton} ${selectedTime === time ? styles.selectedTimeSlot : ''}`}
                             onClick={() => handleTimeSelect(time)}
+                            aria-pressed={bookingData.time === time}
                         >
                             {time}
                         </button>

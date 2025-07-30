@@ -71,40 +71,94 @@ export default function BookingFormStep4({ bookingData, submitForm, goToPrevious
 
             <div className={styles.formField}>
                 <label htmlFor="firstName">FIRST NAME</label>
-                <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="e.g. Sarah" required />
+                <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    placeholder="e.g. Sarah"
+                    required
+                    aria-required="true"
+                    aria-invalid={!!errors.firstName}
+                    aria-describedby="firstNameError"
+                />
                 {errors.firstName && <span className={styles.errorText}>{errors.firstName}</span>}
             </div>
 
             <div className={styles.formField}>
                 <label htmlFor="lastName">LAST NAME</label>
-                <input type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="e.g. Thompson" required />
+                <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    placeholder="e.g. Thompson"
+                    required
+                />
                 {errors.lastName && <span className={styles.errorText}>{errors.lastName}</span>}
             </div>
 
             <div className={styles.formField}>
                 <label htmlFor="email">EMAIL</label>
-                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="e.g. sarah@example.com" required />
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="e.g. sarah@example.com"
+                    required
+                />
                 {errors.email && <span className={styles.errorText}>{errors.email}</span>}
             </div>
 
             <div className={styles.formField}>
                 <label htmlFor="tel">TEL.</label>
-                <input type="tel" id="tel" name="tel" value={formData.tel} onChange={handleChange} placeholder="e.g. 501234567" required />
+                <input
+                    type="tel"
+                    id="tel"
+                    name="tel"
+                    value={formData.tel}
+                    onChange={handleChange}
+                    placeholder="e.g. 501234567"
+                    required
+                />
                 {errors.tel && <span className={styles.errorText}>{errors.tel}</span>}
             </div>
 
             <div className={styles.formField}>
                 <label htmlFor="note">NOTE</label>
-                <textarea id="note" name="note" value={formData.note} onChange={handleChange} placeholder="Allergies, celebrations, or special requests (optional)" />
+                <textarea
+                    id="note"
+                    name="note"
+                    value={formData.note}
+                    onChange={handleChange}
+                    placeholder="Allergies, celebrations, or special requests (optional)"
+                />
             </div>
 
             <div className={styles.checkboxField}>
-                <input type="checkbox" id="promotional" name="promotional" checked={formData.promotional} onChange={handleChange} />
+                <input
+                    type="checkbox"
+                    id="promotional"
+                    name="promotional"
+                    checked={formData.promotional}
+                    onChange={handleChange}
+                />
                 <label htmlFor="promotional">I agree to receive promotional offers and updates from Little Lemon.</label>
             </div>
 
             <div className={styles.checkboxField}>
-                <input type="checkbox" id="termsAccepted" name="termsAccepted" checked={formData.termsAccepted} onChange={handleChange} required />
+                <input
+                    type="checkbox"
+                    id="termsAccepted"
+                    name="termsAccepted"
+                    checked={formData.termsAccepted}
+                    onChange={handleChange}
+                    required
+                />
                 <label htmlFor="termsAccepted">I accept the reservation terms and privacy policy.</label>
                 {errors.termsAccepted && <span className={styles.errorText}>{errors.termsAccepted}</span>}
             </div>
